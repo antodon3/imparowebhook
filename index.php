@@ -14,14 +14,10 @@ function scrapingNews() {
 	    {
 		foreach($tr->find('td') as $news) 
 		{
-		    echo "tabella";
-		    print_r($news->innertext);
 		    $notizie = $news->innertext;
 		}
 		foreach($tr->find('a') as $link) 
 		{
-		    echo "sito";
-		    print_r("http://www.comune.barletta.bt.it/retecivica/".$link->href);
 		    $sito = "http://www.comune.barletta.bt.it/retecivica/".$link->href;
 		}
 	    }
