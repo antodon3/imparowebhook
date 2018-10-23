@@ -4,7 +4,7 @@ $siti = [];
 $notizie = [];
 $method = $_SERVER['REQUEST_METHOD'];
 
-function stampaMessaggio() {
+function stampaMessaggio($speech) {
     	$response = new \stdClass();
 	$response->speech = $speech;
 	$response->displayText = $speech;
@@ -37,7 +37,7 @@ if($method == 'POST'){
 			break;
 	}
 	
-	stampaMessaggio();
+	stampaMessaggio($speech);
 
 }
 else
