@@ -4,6 +4,14 @@ $siti = [];
 $notizie = [];
 $method = $_SERVER['REQUEST_METHOD'];
 
+function stampaMessaggio() {
+    	$response = new \stdClass();
+	$response->speech = $speech;
+	$response->displayText = $speech;
+	$response->source = "webhook";
+	echo json_encode($response);
+}
+
 // Process only when method is POST
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
@@ -21,7 +29,10 @@ if($method == 'POST'){
 			break;
 		
 		case 'news':
-			$speech = "belle news";
+			for ($x = 0; $x <= 10; $x++) {
+			    	$speech = "belle news";
+				stampaMessaggio();
+			} 
 			break;
 		
 		default:
@@ -29,11 +40,7 @@ if($method == 'POST'){
 			break;
 	}
 
-	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
-	$response->source = "webhook";
-	echo json_encode($response);
+	stampaMessaggio();
 }
 else
 {
