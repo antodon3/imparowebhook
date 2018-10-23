@@ -44,7 +44,7 @@ if($method == 'POST'){
 
 		case 'news':
 			for ($x = 0; $x < 5; $x++) {
-				$speech = $news[1].'\n'.$news[2];
+				$speech = $notizie[1].'\n'.$notizie[2];
 				$response = new \stdClass();
 
 				$response->speech = $speech;
