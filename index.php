@@ -43,15 +43,13 @@ if($method == 'POST'){
 			break;
 
 		case 'news':
-			for ($x = 0; $x < 5; $x++) {
-				$speech = $notizie[1].'\n'.$notizie[2];
-				$response = new \stdClass();
+			$speech = $notizie[1].'\n'.$notizie[2];
+			$response = new \stdClass();
 
-				$response->speech = $speech;
-				$response->displayText = $speech;
-				$response->source = "webhook";
-				echo json_encode($response);
-			}
+			$response->speech = $speech;
+			$response->displayText = $speech;
+			$response->source = "webhook";
+			echo json_encode($response);
 			break;
 		
 		default:
