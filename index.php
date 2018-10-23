@@ -40,7 +40,6 @@ if($method == 'POST'){
 			break;
 	}
 
-	stampaMessaggio();
 }
 else
 {
