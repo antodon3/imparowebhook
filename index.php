@@ -5,26 +5,23 @@ $siti = [];
 $notizie = [];
 $method = $_SERVER['REQUEST_METHOD'];
 
-function scrapingNews() {
-	$html = file_get_html('http://www.comune.barletta.bt.it/retecivica/avvisi18.htm');
-	foreach($html->find('#bordovideo-112') as $item)
-	{
-	    // Find all <td> in <tr> 
-	    foreach($item->find('tr') as $tr) 
-	    {
-		foreach($tr->find('td') as $news) 
-		{
-		    $notizie = $news->innertext;
-		}
-		foreach($tr->find('a') as $link) 
-		{
-		    $sito = "http://www.comune.barletta.bt.it/retecivica/".$link->href;
-		}
-	    }
-	}
-}
 
-scrapingNews();
+$html = file_get_html('http://www.comune.barletta.bt.it/retecivica/avvisi18.htm');
+foreach($html->find('#bordovideo-112') as $item)
+{
+    // Find all <td> in <tr> 
+    foreach($item->find('tr') as $tr) 
+    {
+	foreach($tr->find('td') as $news) 
+	{
+	    $notizie = $news->innertext;
+	}
+	foreach($tr->find('a') as $link) 
+	{
+	    $sito = "http://www.comune.barletta.bt.it/retecivica/".$link->href;
+	}
+    }
+}
 
 // Process only when method is POST
 if($method == 'POST'){
