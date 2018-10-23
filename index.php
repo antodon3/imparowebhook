@@ -28,6 +28,8 @@ function scrapingNews() {
 	}
 }
 
+scrapingNews();
+
 // Process only when method is POST
 if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
