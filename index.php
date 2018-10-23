@@ -22,10 +22,12 @@ if($method == 'POST'){
 	switch ($text) {
 		case 'hi':
 			$speech = "Hi, Nice to meet you";
+			stampaMessaggio();
 			break;
 
 		case 'bye':
 			$speech = "Bye, good night";
+			stampaMessaggio();
 			break;
 		
 		case 'news':
@@ -37,6 +39,7 @@ if($method == 'POST'){
 		
 		default:
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
+			stampaMessaggio();
 			break;
 	}
 
